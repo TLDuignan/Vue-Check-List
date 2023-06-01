@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Vue 3.x To Do App</title>
+    <link href="css/todo.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3.2.23/dist/vue.global.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+
+  <body>
+    <section id="todo-app-container">
+      <h1 v-text="appTitle"></h1>
+      <form name="todo-form" method="post" action="" @submit.prevent="addItem">
+        <input name="add-todo" type="text" v-model="itemToAdd" v-bind:class="{error: hasError}">
+        <button type="submit">Add</button>
+      </form>
+
+      <section class="todo-list">
+        <h3>My Tasks</h3>
+        <ul>
+          <li v-for="item in listOfToDoItems">
+            <input type="checkbox" @change="completeTask(item)"
+                                    v-bind="item.isComplete">
+            <span class="title"
+                  contenteditable="true"
+                  v-text="item.title"
+                  @keydown.enter="updateItem($event, item)"
+                  @blur="updateItem($event, item)" 
+                  v-bind:class="{completed: item.isComplete}"></span>
+            <span class="remove" @click="removeTask(item)">&times;</span>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </body>
+
+</html>

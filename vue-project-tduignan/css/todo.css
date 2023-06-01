@@ -1,0 +1,68 @@
+html {
+  font: 17px/1.7 Verdana, Arial, sans-serif;
+}
+
+input[type='text'] {
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  margin-right: 0.5rem;
+  padding: 8px;
+}
+
+button {
+  background: #3498db linear-gradient(to bottom, #3498db, #2980b9);
+  border: none;
+  border-radius: 28px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  background: #3cb0fd linear-gradient(to bottom, #3cb0fd, #3498db);
+}
+
+input[type='text'].error {
+  border: 1px solid red;
+}
+
+[contenteditable='true']:focus {
+  appearance: textfield;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.title {
+  display: inline-block;
+  width: 200px;
+  border: 1px solid transparent;
+  padding: 8px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.title:hover {
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+
+.remove {
+  border: 1px solid #c4c4c4;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: .5rem;
+  padding: 0 .5rem;
+}
+
+.remove:hover {
+  background: #3cb0fd;
+}
+
+.completed {
+  text-decoration: line-through;
+}
